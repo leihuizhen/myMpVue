@@ -2,7 +2,7 @@
   <div>
     <!--用户信息-->
      <div class="userTop">
-       <span><img class="userPic" src="http://img07.tooopen.com/images/20170316/tooopen_sy_201956178977.jpg" alt=""></span>
+       <span><img class="userPic" @click="choosePic"  :src="choosePics" alt=""></span>
        <span class="userName">用户微信号</span>
      </div>
     <div class="line"></div>
@@ -34,11 +34,28 @@ export default {
           { name:'我的券包',src:'/static/images/icon-maintain.png'},
           { name:'我的抽奖',src:'/static/images/icon-project-progress.png'},
           { name:'客服电话：8888888',src:'/static/images/icon-renwu2.png'},
-      ]
+      ],
+      choosePics:'http://img07.tooopen.com/images/20170316/tooopen_sy_201956178977.jpg'
     }
   },
   created () {
 
+  },
+  methods:{
+    choosePic(){
+      var that=this;
+      wx.chooseImage({
+        count: 1, // 默认9
+        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+        success: function (res) {
+          // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+//                var tempFilePaths = res.tempFilePaths
+          that.choosePics=res.tempFilePaths;
+//          console.log(res.tempFilePaths)
+        }
+      })
+    }
   }
 }
 </script>

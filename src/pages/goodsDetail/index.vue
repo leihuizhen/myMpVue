@@ -75,7 +75,7 @@
                 console.info("点击图片了");
               },
             })
-          }
+          },
         },
         mounted() {
 
