@@ -17,7 +17,7 @@ const net = {
         }, // 设置请求的 header
         success: function (res) {
           // success
-          console.log(res.data);
+          // console.log(res.data);
           wx.hideLoading();
           if(res.statusCode!=200){
             wx.showToast({
@@ -53,9 +53,10 @@ const net = {
           'Content-Type': 'application/x-www-form-urlencoded'
         }, // 设置请求的 header
         success: function (res) {
-          console.log(res)
+          // console.log(res)
           // success
           wx.hideLoading();
+
           resolve(res.data);
         },
         fail: function (error) {
