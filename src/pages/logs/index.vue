@@ -7,7 +7,7 @@
      </div>
     <div class="line"></div>
     <div class="cell"  v-for="(item,index) in items" :key="index">
-      <div class="cellItem bottom-1px">
+      <div class="cellItem bottom-1px" @click="go(item.url)">
         <div class="cellLeft">
           <img :src="item.src" alt=""> <span class="cellTitle">{{item.name}}</span>
         </div>
@@ -29,11 +29,11 @@ export default {
     return {
       logs: [],
       items:[
-          { name:'我的订单',src:'/static/images/icon-peisong.png'},
-          { name:'我的收藏',src:'/static/images/icon-iconfontjinru-copy.png'},
-          { name:'我的券包',src:'/static/images/icon-maintain.png'},
-          { name:'我的抽奖',src:'/static/images/icon-project-progress.png'},
-          { name:'客服电话：8888888',src:'/static/images/icon-renwu2.png'},
+          { name:'我的订单',src:'/static/images/icon-peisong.png',url:'../../pages/olders/main'},
+          { name:'我的收藏',src:'/static/images/icon-iconfontjinru-copy.png',url:'../../pages/olders/main'},
+          { name:'我的券包',src:'/static/images/icon-maintain.png',url:'../../pages/olders/main'},
+          { name:'我的抽奖',src:'/static/images/icon-project-progress.png',url:'../../pages/index/main'},
+          { name:'客服电话：8888888',src:'/static/images/icon-renwu2.png',url:'../../pages/olders/main'},
       ],
       choosePics:'http://img07.tooopen.com/images/20170316/tooopen_sy_201956178977.jpg'
     }
@@ -55,6 +55,9 @@ export default {
 //          console.log(res.tempFilePaths)
         }
       })
+    },
+    go(url){
+      wx.switchTab({url})   //跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面
     }
   }
 }

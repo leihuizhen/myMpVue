@@ -1,12 +1,15 @@
 import Vue from "vue";
 import App from "./App";
+
+import net from './utils/net';//导入封装好的net
+Vue.prototype.$net=net;//微信小程序网络请求的配置
 //引入公共样式
 import  '../static/css/common.css'
-Vue.config.productionTip = false
-App.mpType = 'app'
+Vue.config.productionTip = false;
+App.mpType = 'app';
 
-const app = new Vue(App)
-app.$mount()
+const app = new Vue(App);
+app.$mount();
 
 export default {
   // 这个字段走 app.json
