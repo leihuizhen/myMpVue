@@ -3,6 +3,9 @@ import App from "./App";
 
 import net from './utils/net';//导入封装好的net
 Vue.prototype.$net=net;//微信小程序网络请求的配置
+
+import api from './utils/api';//导入封装api
+Vue.prototype.$api=api;//微信小程序网络请求的配置中的api
 //引入公共样式
 import  '../static/css/common.css'
 Vue.config.productionTip = false;
