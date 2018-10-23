@@ -12,23 +12,10 @@ export default {
 //    console.log(formatTimes.formatTime(new Date()));
 //    console.log(formatTimes.formatNumber(1000))
 //    get 请求正确
-      console.log()
-      this.$net.get(this.$api.baseUrl+'123',"").then(value => console.log(value));//value 是获取到的data 值
+//      this.$net.get(this.$api.baseUrl+'123',"").then(value => console.log(value));//value 是获取到的data 值
 //    post  请求
 //    console.log(this.$net.post('http://10.238.100.75:3000/234',{'name':'1','gender':'2'}));
-     this.$net.post(this.$api.baseUrl+'234',{'name':'1','gender':'2'}).then(value => console.log(value));
-//    wx.request({
-//      url: 'http://10.238.100.75:3000/234',
-//      method: "post",
-//      data:{'name':'1','gender':'2'},
-//      header: {
-//        'content-type': 'application/x-www-form-urlencoded'
-//      },
-//      success: (res) => {
-//         console.log(res);
-//
-//      }
-//    })
+//     this.$net.post(this.$api.baseUrl+'234',{'name':'1','gender':'2'}).then(value => console.log(value));
 
   }
 }
